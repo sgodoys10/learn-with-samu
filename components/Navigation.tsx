@@ -1,3 +1,4 @@
+// components/Navigation.tsx
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -22,67 +23,80 @@ export default function Navigation() {
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+  function closeMenu() {
+    setOpen(false);
+    triggerRef.current?.focus();
+  }
 
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [open]);
-
+  // Close with Escape.
   useEffect(() => {
     if (!open) return;
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setOpen(false);
-        triggerRef.current?.focus();
-        return;
-      }
-
-      if (event.key === "Tab" && panelRef.current) {
-        const focusable = panelRef.current.querySelectorAll<HTMLElement>(
-          "a[href], button:not([disabled])",
-        );
-
-        if (focusable.length === 0) return;
-
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
-
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first.focus();
-        }
+        closeMenu();
       }
     }
 
     document.addEventListener("keydown", handleKeyDown);
-
-    panelRef.current
-      ?.querySelector<HTMLElement>("a[href], button:not([disabled])")
-      ?.focus();
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [open]);
 
-  function closeMenu() {
-    setOpen(false);
-    triggerRef.current?.focus();
-  }
+  // Close when clicking outside the dropdown or hamburger button.
+  useEffect(() => {
+    if (!open) return;
+
+    function handlePointerDown(event: MouseEvent) {
+      const target = event.target as Node;
+
+      if (
+        panelRef.current?.contains(target) ||
+        triggerRef.current?.contains(target)
+      ) {
+        return;
+      }
+
+      closeMenu();
+    }
+
+    document.addEventListener("mousedown", handlePointerDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+    };
+  }, [open]);
+
+  // Close the mobile menu when returning to desktop width.
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 980px)");
+
+    function handleChange(event: MediaQueryListEvent) {
+      if (!event.matches) {
+        setOpen(false);
+      }
+    }
+
+    query.addEventListener("change", handleChange);
+
+    return () => {
+      query.removeEventListener("change", handleChange);
+    };
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 h-[66px] border-b border-rule-soft bg-nav-bg backdrop-blur-md">
-      <div className="mx-auto flex h-full max-w-content items-center justify-between px-[clamp(1.25rem,5vw,4.5rem)]">
-        <Link href="/" className="font-serif text-h3 font-medium text-ink">
+      <div className="relative mx-auto flex h-full max-w-content items-center justify-between px-[clamp(1.25rem,5vw,4.5rem)]">
+        <Link
+          href="/"
+          className="font-serif text-h3 font-medium text-ink transition-colors hover:text-accent-deep"
+        >
           {SITE_NAME}
         </Link>
 
+        {/* Desktop navigation */}
         <div className="flex items-center gap-s4 nav:hidden">
           <ul className="flex items-center gap-s3">
             {NAV_LINKS.map((link) => (
@@ -102,6 +116,7 @@ export default function Navigation() {
           </a>
         </div>
 
+        {/* Mobile menu button */}
         <button
           ref={triggerRef}
           type="button"
@@ -135,57 +150,21 @@ export default function Navigation() {
             )}
           </svg>
         </button>
-      </div>
 
-      {open && (
-        <div className="fixed inset-0 z-50 hidden nav:block">
-          <div
-            className="absolute inset-0 bg-ink/30 motion-safe:animate-fade-in"
-            onClick={closeMenu}
-            aria-hidden="true"
-          />
-
+        {/* Mobile dropdown */}
+        {open && (
           <div
             ref={panelRef}
             id="mobile-nav-panel"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Site navigation"
-            className="absolute right-0 top-0 flex h-full w-[min(85vw,340px)] flex-col bg-paper p-s4 shadow-xl motion-safe:animate-slide-in"
+            className="absolute inset-x-0 top-full max-h-[calc(100vh-66px)] overflow-y-auto border-b border-rule bg-paper shadow-md nav:block motion-safe:transition-opacity motion-safe:duration-150"
           >
-            <div className="mb-s5 flex items-center justify-between">
-              <span className="font-serif text-h3 text-ink">{SITE_NAME}</span>
-
-              <button
-                type="button"
-                className="flex size-11 items-center justify-center rounded-control"
-                onClick={closeMenu}
-                aria-label="Close menu"
-              >
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 6l12 12M18 6L6 18"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            <ul className="flex flex-1 flex-col gap-s3">
+            <ul className="flex flex-col divide-y divide-rule-soft px-[clamp(1.25rem,5vw,4.5rem)]">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={closeMenu}
-                    className="block min-h-11 py-s2 font-sans text-h3 font-medium text-ink"
+                    className="block min-h-11 py-s3 font-sans text-body font-medium text-ink"
                   >
                     {link.label}
                   </a>
@@ -193,16 +172,18 @@ export default function Navigation() {
               ))}
             </ul>
 
-            <a
-              href={CTA.href}
-              onClick={closeMenu}
-              className={`${ctaClasses} w-full`}
-            >
-              {CTA.label}
-            </a>
+            <div className="px-[clamp(1.25rem,5vw,4.5rem)] pb-s4 pt-s2">
+              <a
+                href={CTA.href}
+                onClick={closeMenu}
+                className={`${ctaClasses} w-full`}
+              >
+                {CTA.label}
+              </a>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 }
