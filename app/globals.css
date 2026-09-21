@@ -124,3 +124,8 @@
     transform: translateX(0);
   }
 }
+.gloss {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-ink-soft);
+}
