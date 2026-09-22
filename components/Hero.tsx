@@ -2,12 +2,22 @@ import Link from "next/link";
 
 const hero = {
   eyebrow: "Spanish lessons",
-  headline: "Learn to actually talk to people.",
-  gloss: "Aprende a hablar de verdad con la gente.",
-  body: "[Supporting paragraph — one or two sentences introducing the teaching approach and who these lessons are for.]",
+
+  headline: "Spanish for the real world.",
+
+  gloss: "Español para el mundo real.",
+
+  body: "Our classes follow ACTFL proficiency guidelines, with clear goals for each level and a focus on what students can actually do with Spanish. Through Communicative Language Teaching (CLT), students use grammar, vocabulary, and language concepts to accomplish meaningful goals through real-world topics, situations, and interactions.",
+
   primaryCta: { label: "See upcoming sessions", href: "#sessions" },
+
   secondaryCta: { label: "Meet the teacher", href: "#about" },
-  meta: ["[Levels offered]", "[Class format]", "[Where lessons happen]"],
+
+  meta: [
+    "Novice – Advanced",
+    "Small group classes",
+    "Real-world communication",
+  ],
 };
 
 const primaryCtaClasses =

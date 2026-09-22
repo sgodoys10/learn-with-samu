@@ -4,13 +4,12 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-const SITE_NAME = "[Site Name]";
+const SITE_NAME = "Learn with Samu";
 
 const NAV_LINKS = [
   { label: "Classes", href: "#classes" },
   { label: "About", href: "#about" },
   { label: "Sessions", href: "#sessions" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const CTA = { label: "Contact", href: "#contact" };

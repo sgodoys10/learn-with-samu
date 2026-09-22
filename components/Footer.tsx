@@ -1,8 +1,9 @@
 // components/Footer.tsx
 
 // PLACEHOLDER — "Cadencia" is only a working design name, not final.
-const siteName = "[Site Name]";
-const tagline = "[One-line description of the Spanish teaching offering]";
+const siteName = "Learn with Samu";
+const tagline =
+  "Spanish classes that help you use the language with confidence through meaningful communication and real-world experiences.";
 
 const links = [
   { label: "Classes", href: "#classes" },

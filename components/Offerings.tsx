@@ -1,20 +1,19 @@
 // components/Offerings.tsx
 import OfferingPanel from "./OfferingPanel";
 
-// PLACEHOLDER content — descriptions, bullets, and CTAs below are
-// structural placeholders only. No pricing, duration, or class-size
-// claims are invented; replace with real details once decided.
 const connector =
-  '[Connecting line — e.g. "However you learn, the teaching approach stays the same."]';
+  "Whether you learn in a group or through individual instruction, the approach stays the same: Spanish is learned through meaningful communication, real-world contexts, and clear proficiency goals.";
 
 const group = {
   heading: "Group Spanish Classes",
   gloss: "Clases grupales de español",
-  description: "[Description of the group class format and who it's for.]",
+  description:
+    "Small-group courses for students who want to develop their Spanish through consistent practice and interaction with other learners. All group courses meet twice a week for 10 weeks, with each class lasting one hour. Courses range from Novice through Advanced proficiency levels and work toward clear ACTFL-aligned goals through real-world topics, activities, and communication.",
   bullets: [
-    "[Meeting pattern / length]",
-    "[Group size]",
-    "[Price per session]",
+    "2 classes per week for 10 weeks",
+    "1 hour per class • Maximum 8 students",
+    "$300 for the full course • $15 per class",
+    "Pay in full or divide into 2 payments",
   ],
   ctaLabel: "See which sessions are open",
   ctaHref: "#sessions",
@@ -23,15 +22,20 @@ const group = {
 const privateClasses = {
   heading: "Private Spanish Classes",
   gloss: "Clases particulares de español",
-  description: "[Description of private instruction and how it's customized.]",
-  bullets: ["[Lesson length / frequency]", "[Rate]", "[How scheduling works]"],
+  description:
+    "Individual instruction tailored to your goals, interests, and proficiency level. Lessons can focus on conversation, specific language skills, academic or professional needs, or continued development toward higher levels of proficiency. Private instruction is available from Novice through Distinguished.",
+  bullets: [
+    "1 hour per session",
+    "$30 per session",
+    "Scheduling arranged directly with the instructor",
+  ],
   ctaLabel: "Ask about private lessons",
   ctaHref: "#contact",
 };
 
 /**
  * Two parallel offerings (group, private) sharing one panel structure so
- * they read as two forms of the same teaching approach, per spec.
+ * they read as two forms of the same teaching approach.
  */
 export default function Offerings() {
   return (
