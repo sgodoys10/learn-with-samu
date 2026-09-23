@@ -1,5 +1,3 @@
-// components/TeacherIntro.tsx
-
 import Image from "next/image";
 
 const teacher = {
@@ -19,24 +17,25 @@ const teacher = {
   ],
 };
 
-/**
- * First-person teacher introduction built around a real photo,
- * personal background, and teaching philosophy.
- */
 export default function TeacherIntro() {
   return (
     <section id="about" className="bg-paper-alt">
       <div className="container py-s7">
-        <p className="mb-s2 font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
-          The teacher
-        </p>
-        <h2 className="font-serif text-h2 font-medium text-ink">
+        <div className="flex items-center gap-s2">
+          <span aria-hidden="true" className="h-2 w-2 rounded-full bg-accent" />
+          <p className="font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
+            01 / The teacher
+          </p>
+        </div>
+
+        <h2 className="mt-s2 font-serif text-h2 font-medium text-ink">
           Meet your teacher
         </h2>
+
         <p className="gloss mt-s1 text-h3">Conoce a tu profesor</p>
 
         <div className="mt-s5 grid grid-cols-[280px_1fr] gap-s5 nav:grid-cols-1">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-panel border border-rule">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-panel border border-rule shadow-sm">
             <Image
               src={teacher.photoSrc}
               alt={teacher.photoAlt}

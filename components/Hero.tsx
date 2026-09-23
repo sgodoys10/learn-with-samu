@@ -30,39 +30,80 @@ export default function Hero() {
   return (
     <section className="border-b border-rule-soft bg-paper">
       <div className="container motion-safe:animate-fade-in py-s7">
-        <p className="mb-s2 font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
-          {hero.eyebrow}
-        </p>
+        <div className="grid items-center gap-s6 nav:grid-cols-1">
+          <div className="grid grid-cols-[minmax(0,1fr)_minmax(280px,0.72fr)] items-center gap-s6 nav:grid-cols-1">
+            <div>
+              <p className="mb-s2 font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
+                {hero.eyebrow}
+              </p>
 
-        <h1 className="font-serif text-display font-medium text-ink">
-          {hero.headline}
-        </h1>
+              <h1 className="font-serif text-display font-medium leading-tight text-ink">
+                {hero.headline}
+              </h1>
 
-        <p className="gloss mt-s2 text-h3">{hero.gloss}</p>
+              <p className="gloss mt-s2 text-h3">{hero.gloss}</p>
 
-        <p className="prose-measure mt-s4 font-sans text-body text-ink-soft">
-          {hero.body}
-        </p>
+              <p className="prose-measure mt-s4 font-sans text-body text-ink-soft">
+                {hero.body}
+              </p>
 
-        <div className="mt-s5 flex flex-wrap gap-s3 stack:flex-col">
-          <Link href={hero.primaryCta.href} className={primaryCtaClasses}>
-            {hero.primaryCta.label}
-          </Link>
-          <Link href={hero.secondaryCta.href} className={secondaryCtaClasses}>
-            {hero.secondaryCta.label}
-          </Link>
-        </div>
+              <div className="mt-s5 flex flex-wrap gap-s3 stack:flex-col">
+                <Link href={hero.primaryCta.href} className={primaryCtaClasses}>
+                  {hero.primaryCta.label}
+                </Link>
 
-        <ul className="mt-s5 flex flex-wrap gap-s4 border-t border-rule-soft pt-s3 stack:flex-col stack:gap-s2">
-          {hero.meta.map((item) => (
-            <li
-              key={item}
-              className="font-sans text-micro font-medium uppercase tracking-wide text-ink-soft"
+                <Link
+                  href={hero.secondaryCta.href}
+                  className={secondaryCtaClasses}
+                >
+                  {hero.secondaryCta.label}
+                </Link>
+              </div>
+            </div>
+
+            <div
+              aria-hidden="true"
+              className="relative min-h-[360px] overflow-hidden rounded-panel border border-rule bg-paper-alt/60 nav:min-h-[300px] stack:min-h-[260px]"
             >
-              {item}
-            </li>
-          ))}
-        </ul>
+              <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-accent opacity-80" />
+
+              <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-cyan opacity-70" />
+
+              <div className="absolute left-6 top-6 font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
+                Spanish in use
+              </div>
+
+              <div className="absolute left-6 top-1/2 -translate-y-1/2 font-serif text-[clamp(2.8rem,5vw,4.5rem)] leading-none text-ink">
+                hablar
+                <br />
+                escuchar
+                <br />
+                conectar
+              </div>
+
+              <div className="absolute bottom-6 right-6 max-w-[190px] rounded-control border border-rule bg-paper px-s3 py-s2 shadow-sm">
+                <p className="font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
+                  Real-world communication
+                </p>
+
+                <p className="mt-1 font-serif text-h3 italic text-ink">
+                  aprender haciendo
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <ul className="flex flex-wrap gap-s4 border-t border-rule-soft pt-s3 stack:flex-col stack:gap-s2">
+            {hero.meta.map((item) => (
+              <li
+                key={item}
+                className="font-sans text-micro font-medium uppercase tracking-wide text-ink-soft"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

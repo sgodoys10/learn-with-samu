@@ -1,4 +1,3 @@
-// components/Offerings.tsx
 import OfferingPanel from "./OfferingPanel";
 
 const connector =
@@ -33,21 +32,30 @@ const privateClasses = {
   ctaHref: "#contact",
 };
 
-/**
- * Two parallel offerings (group, private) sharing one panel structure so
- * they read as two forms of the same teaching approach.
- */
 export default function Offerings() {
   return (
     <section id="classes" className="bg-paper">
       <div className="container py-s7">
-        <p className="mb-s2 font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
-          How you can learn
-        </p>
-        <h2 className="font-serif text-h2 font-medium text-ink">
-          Two ways to learn
-        </h2>
-        <p className="gloss mt-s1 text-h3">Dos maneras de aprender</p>
+        <div className="flex items-center gap-s2">
+          <span aria-hidden="true" className="h-2 w-2 rounded-full bg-bronze" />
+          <p className="font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
+            02 / How you can learn
+          </p>
+        </div>
+
+        <div className="mt-s2 flex items-end justify-between gap-s5 nav:flex-col nav:items-start nav:gap-s3">
+          <div>
+            <h2 className="font-serif text-h2 font-medium text-ink">
+              Two ways to learn
+            </h2>
+            <p className="gloss mt-s1 text-h3">Dos maneras de aprender</p>
+          </div>
+
+          <div
+            aria-hidden="true"
+            className="mb-2 h-px w-24 bg-bronze nav:hidden"
+          />
+        </div>
 
         <p className="prose-measure mt-s3 font-sans text-body text-ink-soft">
           {connector}

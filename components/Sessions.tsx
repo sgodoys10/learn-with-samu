@@ -1,4 +1,3 @@
-// components/Sessions.tsx
 import SessionCard, { type Session } from "./SessionCard";
 
 // PLACEHOLDER session data — replace dates, levels labels, and meeting
@@ -7,35 +6,35 @@ import SessionCard, { type Session } from "./SessionCard";
 // specific session content.
 const sessions: Session[] = [
   {
-    level: "Spanish 1 — Beginner",
-    sessionLabel: "[Session name — e.g. Fall Session]",
-    startDate: "[Start date]",
-    endDate: "[End date]",
-    meetingPattern: "[Meeting days/time]",
+    level: "Spanish 1 — Novice Low",
+    sessionLabel: "Spanish Foundations",
+    startDate: "Oct 6",
+    endDate: "Dec 10",
+    meetingPattern: "Tuesdays + Thursdays · 6:00–7:00 PM",
     status: "open",
   },
   {
-    level: "Spanish 2 — Intermediate",
-    sessionLabel: "[Session name — e.g. Fall Session]",
-    startDate: "[Start date]",
-    endDate: "[End date]",
-    meetingPattern: "[Meeting days/time]",
+    level: "Spanish 2 — Novice Mid",
+    sessionLabel: "Spanish in Conversation",
+    startDate: "Oct 13",
+    endDate: "Dec 17",
+    meetingPattern: "Tuesdays + Thursdays · 7:00–8:00 PM",
     status: "limited",
   },
   {
-    level: "Spanish 3 — Conversational",
-    sessionLabel: "[Session name — e.g. Fall Session]",
-    startDate: "[Start date]",
-    endDate: "[End date]",
-    meetingPattern: "[Meeting days/time]",
+    level: "Spanish 3 — Intermediate Low",
+    sessionLabel: "Spanish Through Culture",
+    startDate: "Oct 20",
+    endDate: "Dec 22",
+    meetingPattern: "Tuesdays + Thursdays · 6:00–7:00 PM",
     status: "full",
   },
   {
-    level: "Spanish 1 — Beginner",
-    sessionLabel: "[Session name — e.g. Winter Session]",
-    startDate: "[Start date]",
-    endDate: "[End date]",
-    meetingPattern: "[Meeting days/time]",
+    level: "Spanish 1 — Novice Low",
+    sessionLabel: "Winter Spanish Foundations",
+    startDate: "Jan 12",
+    endDate: "Mar 18",
+    meetingPattern: "Tuesdays + Thursdays · 6:00–7:00 PM",
     status: "soon",
   },
 ];
@@ -48,13 +47,29 @@ export default function Sessions() {
   return (
     <section id="sessions" className="bg-paper-alt">
       <div className="container py-s7">
-        <p className="mb-s2 font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
-          Schedule
-        </p>
-        <h2 className="font-serif text-h2 font-medium text-ink">
-          Upcoming sessions
-        </h2>
-        <p className="gloss mt-s1 text-h3">Próximas sesiones</p>
+        <div className="flex items-center gap-s2">
+          <span
+            aria-hidden="true"
+            className="h-2 w-2 rounded-full bg-cyan-deep"
+          />
+          <p className="font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
+            03 / Schedule
+          </p>
+        </div>
+
+        <div className="mt-s2 flex items-end justify-between gap-s5 nav:flex-col nav:items-start nav:gap-s3">
+          <div>
+            <h2 className="font-serif text-h2 font-medium text-ink">
+              Upcoming sessions
+            </h2>
+            <p className="gloss mt-s1 text-h3">Próximas sesiones</p>
+          </div>
+
+          <div
+            aria-hidden="true"
+            className="mb-2 h-px w-24 bg-cyan-deep nav:hidden"
+          />
+        </div>
 
         <p className="prose-measure mt-s3 font-sans text-small text-ink-soft">
           Session status is updated by hand and reflects availability as of the
