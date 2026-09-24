@@ -65,12 +65,23 @@ export default function Hero() {
               aria-hidden="true"
               className="relative min-h-[360px] overflow-hidden rounded-panel border border-rule bg-paper-alt/60 nav:min-h-[300px] stack:min-h-[260px]"
             >
-              <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-accent opacity-80" />
+              {/* Slowly drifting decorative shapes */}
+              <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-accent opacity-80 motion-safe:animate-hero-drift" />
 
-              <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-cyan opacity-70" />
+              <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-cyan opacity-70 motion-safe:animate-hero-drift-reverse" />
 
-              <div className="absolute left-6 top-6 font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
-                Spanish in use
+              {/* Editorial detail */}
+              <div className="absolute left-6 top-6 flex items-center gap-s1">
+                <span
+                  aria-hidden="true"
+                  className="h-1.5 w-1.5 rounded-full bg-accent"
+                />
+
+                <span className="h-px w-8 bg-rule" />
+
+                <span className="font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
+                  Spanish in use
+                </span>
               </div>
 
               <div className="absolute left-6 top-1/2 -translate-y-1/2 font-serif text-[clamp(2.6rem,4.5vw,4rem)] leading-none text-ink">

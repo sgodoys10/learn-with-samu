@@ -36,24 +36,34 @@ export default function Offerings() {
   return (
     <section id="classes" className="bg-paper">
       <div className="container py-s7">
-        <div className="flex items-center gap-s2">
-          <span aria-hidden="true" className="h-2 w-2 rounded-full bg-bronze" />
+        <div className="group flex w-fit items-center gap-s2">
+          <span
+            aria-hidden="true"
+            className="h-2 w-2 rounded-full bg-bronze transition-transform duration-300 ease-out group-hover:translate-x-1"
+          />
+
+          <span
+            aria-hidden="true"
+            className="h-px w-6 bg-rule transition-all duration-300 ease-out group-hover:w-8"
+          />
+
           <p className="font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
             02 / How you can learn
           </p>
         </div>
 
-        <div className="mt-s2 flex items-end justify-between gap-s5 nav:flex-col nav:items-start nav:gap-s3">
+        <div className="group mt-s2 flex items-end justify-between gap-s5 nav:flex-col nav:items-start nav:gap-s3">
           <div>
-            <h2 className="font-serif text-h2 font-medium text-ink">
+            <h2 className="font-serif text-h2 font-medium text-ink transition-colors duration-200 group-hover:text-accent-deep">
               Two ways to learn
             </h2>
+
             <p className="gloss mt-s1 text-h3">Dos maneras de aprender</p>
           </div>
 
           <div
             aria-hidden="true"
-            className="mb-2 h-px w-24 bg-bronze nav:hidden"
+            className="mb-2 h-px w-24 origin-right bg-bronze transition-transform duration-300 ease-out nav:hidden group-hover:scale-x-110"
           />
         </div>
 

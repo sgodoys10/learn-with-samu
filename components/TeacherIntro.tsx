@@ -27,6 +27,10 @@ export default function TeacherIntro() {
             aria-hidden="true"
             className="h-2 w-2 rounded-full bg-accent transition-transform duration-300 ease-out group-hover:translate-x-1"
           />
+          <span
+            aria-hidden="true"
+            className="h-px w-6 bg-rule transition-all duration-300 ease-out group-hover:w-8"
+          />
           <p className="font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
             01 / The teacher
           </p>
@@ -36,7 +40,6 @@ export default function TeacherIntro() {
           <h2 className="font-serif text-h2 font-medium text-ink">
             Meet your teacher
           </h2>
-
           <p className="gloss mt-s1 translate-y-0 text-h3 opacity-75 transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:opacity-100">
             Conoce a tu profesor
           </p>
@@ -73,7 +76,7 @@ export default function TeacherIntro() {
                 {teacher.credentials.map((item, index) => (
                   <li
                     key={index}
-                    className="font-sans text-micro font-medium uppercase tracking-wide text-ink-soft"
+                    className="font-sans text-micro font-medium uppercase tracking-wide text-ink-soft transition-transform duration-200 hover:translate-x-0.5"
                   >
                     {item}
                   </li>

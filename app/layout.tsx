@@ -3,7 +3,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 
 export const metadata: Metadata = {
-  title: "[Site Name] — Spanish Classes",
+  title: " Learn with Samu — Spanish Classes",
   description: "Spanish classes for real communication.",
 };
 

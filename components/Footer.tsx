@@ -2,6 +2,7 @@
 
 // PLACEHOLDER — "Cadencia" is only a working design name, not final.
 const siteName = "Learn with Samu";
+
 const tagline =
   "Spanish classes that help you use the language with confidence through meaningful communication and real-world experiences.";
 
@@ -19,10 +20,27 @@ const links = [
 export default function Footer() {
   return (
     <footer className="border-t border-rule-soft bg-paper-alt">
-      <div className="container flex flex-col gap-s4 py-s5 stack:gap-s3">
-        <div className="flex flex-wrap items-center justify-between gap-s3 stack:flex-col stack:items-start">
+      <div className="container py-s5">
+        <div className="group mb-s4 flex w-fit items-center gap-s2">
+          <span
+            aria-hidden="true"
+            className="h-2 w-2 rounded-full bg-bronze transition-transform duration-300 ease-out group-hover:translate-x-1"
+          />
+
+          <span
+            aria-hidden="true"
+            className="h-px w-6 bg-rule transition-all duration-300 ease-out group-hover:w-8"
+          />
+
+          <span className="font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
+            Learn with Samu
+          </span>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-between gap-s4 stack:flex-col stack:items-start">
           <div>
             <p className="font-serif text-h3 text-ink">{siteName}</p>
+
             <p className="mt-1 font-sans text-small text-ink-soft">{tagline}</p>
           </div>
 
@@ -32,9 +50,16 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="font-sans text-small font-medium text-ink transition-colors hover:text-accent-deep"
+                    className="group/link inline-flex items-center gap-1 font-sans text-small font-medium text-ink transition-colors duration-200 hover:text-accent-deep"
                   >
-                    {link.label}
+                    <span>{link.label}</span>
+
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-200 ease-out group-hover/link:translate-x-0.5"
+                    >
+                      →
+                    </span>
                   </a>
                 </li>
               ))}
@@ -42,7 +67,7 @@ export default function Footer() {
           </nav>
         </div>
 
-        <p className="border-t border-rule-soft pt-s3 font-sans text-micro text-ink-soft">
+        <p className="mt-s4 border-t border-rule-soft pt-s3 font-sans text-micro text-ink-soft">
           © {new Date().getFullYear()} {siteName}
         </p>
       </div>

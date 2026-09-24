@@ -9,10 +9,6 @@ export type Session = {
   status: SessionStatus;
 };
 
-/**
- * Single session card. Start/end dates are presented together as the
- * primary schedule information so the course period is easy to scan.
- */
 export default function SessionCard({ session }: { session: Session }) {
   return (
     <article className="group rounded-panel border border-rule bg-paper p-s4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
