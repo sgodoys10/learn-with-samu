@@ -1,5 +1,3 @@
-// components/OfferingPanel.tsx
-
 type OfferingPanelProps = {
   heading: string;
   gloss: string;
@@ -22,8 +20,11 @@ export default function OfferingPanel({
   ctaHref,
 }: OfferingPanelProps) {
   return (
-    <div className="rounded-panel bg-paper p-s4">
-      <h3 className="font-serif text-h3 text-ink">{heading}</h3>
+    <div className="group rounded-panel bg-paper p-s4 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
+      <h3 className="font-serif text-h3 text-ink transition-colors duration-200 group-hover:text-accent-deep">
+        {heading}
+      </h3>
+
       <p className="gloss mt-s1">{gloss}</p>
 
       <p className="mt-s3 font-sans text-body text-ink-soft">{description}</p>
@@ -33,7 +34,7 @@ export default function OfferingPanel({
           <li key={index} className="flex items-start gap-s2">
             <span
               aria-hidden="true"
-              className="mt-[0.5em] size-1.5 flex-shrink-0 rounded-full bg-accent"
+              className="mt-[0.5em] size-1.5 flex-shrink-0 rounded-full bg-accent transition-transform duration-200 group-hover:translate-x-0.5"
             />
             <span className="font-sans text-small text-ink">{bullet}</span>
           </li>
@@ -42,9 +43,15 @@ export default function OfferingPanel({
 
       <a
         href={ctaHref}
-        className="mt-s4 inline-flex min-h-11 items-center border-b border-accent-deep font-sans text-small font-semibold text-accent-deep transition-colors hover:border-accent hover:text-accent"
+        className="group/link mt-s4 inline-flex min-h-11 items-center gap-1 border-b border-accent-deep font-sans text-small font-semibold text-accent-deep transition-all duration-200 hover:border-accent hover:text-accent"
       >
-        {ctaLabel}
+        <span>{ctaLabel}</span>
+        <span
+          aria-hidden="true"
+          className="transition-transform duration-200 group-hover/link:translate-x-1"
+        >
+          →
+        </span>
       </a>
     </div>
   );

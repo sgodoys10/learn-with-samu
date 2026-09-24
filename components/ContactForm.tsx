@@ -3,17 +3,11 @@
 import { useState } from "react";
 
 const inputClasses =
-  "w-full rounded-control border border-rule bg-paper px-s2 py-s2 font-sans text-small text-ink transition-colors hover:border-ink-soft focus:border-ink-soft";
+  "w-full rounded-control border border-rule bg-paper px-s2 py-s2 font-sans text-small text-ink transition-all duration-200 outline-none placeholder:text-ink-soft/60 hover:border-ink-soft focus:border-accent-deep focus:ring-2 focus:ring-accent-deep/10";
 
 const labelClasses =
   "mb-s1 block font-sans text-micro font-medium uppercase tracking-wide text-ink-soft";
 
-/**
- * Structurally complete but not wired to any backend, database, or
- * third-party form service yet — submitting only shows a local
- * placeholder confirmation, per spec. Connect a real form endpoint later
- * at the marked TODO.
- */
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
 
@@ -28,7 +22,7 @@ export default function ContactForm() {
     return (
       <div
         role="status"
-        className="rounded-panel border border-rule bg-paper p-s4 font-sans text-body text-ink"
+        className="rounded-panel border border-rule bg-paper p-s4 font-sans text-body text-ink transition-all duration-300"
       >
         Thanks for reaching out. This form isn't connected to an inbox yet, but
         the contact functionality will be connected before launch.
@@ -81,9 +75,15 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="inline-flex min-h-11 items-center justify-center rounded-control bg-accent-deep px-s3 py-s2 font-sans text-small font-semibold text-paper transition-colors hover:bg-ink"
+        className="group/send inline-flex min-h-11 items-center justify-center gap-1 rounded-control bg-accent-deep px-s3 py-s2 font-sans text-small font-semibold text-paper transition-all duration-200 ease-out hover:-translate-y-px hover:bg-ink hover:shadow-sm active:translate-y-0"
       >
-        Send message
+        <span>Send message</span>
+        <span
+          aria-hidden="true"
+          className="transition-transform duration-200 ease-out group-hover/send:translate-x-1"
+        >
+          →
+        </span>
       </button>
     </form>
   );

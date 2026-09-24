@@ -73,7 +73,7 @@ export default function Hero() {
                 Spanish in use
               </div>
 
-              <div className="absolute left-6 top-1/2 -translate-y-1/2 font-serif text-[clamp(2.8rem,5vw,4.5rem)] leading-none text-ink">
+              <div className="absolute left-6 top-1/2 -translate-y-1/2 font-serif text-[clamp(2.6rem,4.5vw,4rem)] leading-none text-ink">
                 hablar
                 <br />
                 escuchar
@@ -81,12 +81,12 @@ export default function Hero() {
                 conectar
               </div>
 
-              <div className="absolute bottom-6 right-6 max-w-[190px] rounded-control border border-rule bg-paper px-s3 py-s2 shadow-sm">
-                <p className="font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
+              <div className="absolute bottom-4 right-4 max-w-[155px] rounded-control border border-rule bg-paper px-s2 py-s1.5 shadow-sm">
+                <p className="font-sans text-[0.65rem] font-semibold uppercase leading-tight tracking-wide text-ink-soft">
                   Real-world communication
                 </p>
 
-                <p className="mt-1 font-serif text-h3 italic text-ink">
+                <p className="mt-1 font-serif text-h3 italic leading-tight text-ink">
                   aprender haciendo
                 </p>
               </div>

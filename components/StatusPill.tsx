@@ -17,11 +17,11 @@ const statusClasses: Record<SessionStatus, string> = {
 export default function StatusPill({ status }: { status: SessionStatus }) {
   return (
     <span
-      className={`inline-flex items-center rounded-full border px-s2 py-[0.2rem] font-sans text-micro font-semibold ${statusClasses[status]}`}
+      className={`group/status inline-flex items-center rounded-full border px-s2 py-[0.2rem] font-sans text-micro font-semibold transition-all duration-200 ease-out hover:-translate-y-px hover:shadow-sm ${statusClasses[status]}`}
     >
       <span
         aria-hidden="true"
-        className="mr-s1 h-1.5 w-1.5 rounded-full bg-current"
+        className="mr-s1 h-1.5 w-1.5 rounded-full bg-current transition-transform duration-200 ease-out group-hover/status:scale-125"
       />
       {statusLabels[status]}
     </span>

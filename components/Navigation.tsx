@@ -1,4 +1,3 @@
-// components/Navigation.tsx
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -15,7 +14,7 @@ const NAV_LINKS = [
 const CTA = { label: "Contact", href: "#contact" };
 
 const ctaClasses =
-  "inline-flex min-h-11 items-center justify-center rounded-control bg-accent-deep px-s3 py-s2 font-sans text-small font-semibold text-paper transition-colors hover:bg-ink";
+  "inline-flex min-h-11 items-center justify-center rounded-control bg-accent-deep px-s3 py-s2 font-sans text-small font-semibold text-paper transition-all duration-200 hover:-translate-y-px hover:bg-ink hover:shadow-sm active:translate-y-0";
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
@@ -90,7 +89,7 @@ export default function Navigation() {
       <div className="relative mx-auto flex h-full max-w-content items-center justify-between px-[clamp(1.25rem,5vw,4.5rem)]">
         <Link
           href="/"
-          className="font-serif text-h3 font-medium text-ink transition-colors hover:text-accent-deep"
+          className="font-serif text-h3 font-medium text-ink transition-colors duration-200 hover:text-accent-deep"
         >
           {SITE_NAME}
         </Link>
@@ -102,9 +101,13 @@ export default function Navigation() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="font-sans text-small font-medium text-ink transition-colors hover:text-accent-deep"
+                  className="group relative inline-block py-1 font-sans text-small font-medium text-ink transition-colors duration-200 hover:text-accent-deep"
                 >
                   {link.label}
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-1 bottom-0 h-px origin-center scale-x-0 bg-accent-deep transition-transform duration-200 ease-out group-hover:scale-x-100"
+                  />
                 </a>
               </li>
             ))}
@@ -119,7 +122,7 @@ export default function Navigation() {
         <button
           ref={triggerRef}
           type="button"
-          className="hidden size-11 items-center justify-center rounded-control nav:flex"
+          className="hidden size-11 items-center justify-center rounded-control transition-colors hover:bg-paper-alt nav:flex"
           aria-expanded={open}
           aria-controls="mobile-nav-panel"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -163,7 +166,7 @@ export default function Navigation() {
                   <a
                     href={link.href}
                     onClick={closeMenu}
-                    className="block min-h-11 py-s3 font-sans text-body font-medium text-ink"
+                    className="block min-h-11 py-s3 font-sans text-body font-medium text-ink transition-colors duration-200 hover:text-accent-deep"
                   >
                     {link.label}
                   </a>

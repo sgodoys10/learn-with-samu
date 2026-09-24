@@ -11,9 +11,9 @@
 @theme {
   /* Colors — light mode only for V1. */
   --color-paper: #fbecd6;
-  --color-paper-alt: #f7dcb4;
+  --color-paper-alt: #92967D;
   --color-ink: #583129;
-  --color-ink-soft: #7d5c50; /* darkened from #866559 for a safer contrast margin */
+  --color-ink-soft: #6B4A41; /* darkened from #866559 for a safer contrast margin */
   --color-accent: #f56960;      /* decorative only — never text or a button fill */
   --color-accent-deep: #ac4a43; /* text-safe actionable color */
   --color-amber: #935247;       /* text-safe attention color */

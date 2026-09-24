@@ -6,14 +6,15 @@ const teacher = {
   photoSrc: "/samuel.jpeg",
   greeting: "Hi, I'm Samuel.",
   bio: [
-    "I’m a Spanish instructor and language educator with years of experience teaching Spanish to university students and learners in a variety of settings. Spanish is my first language, and I am from Cali, Colombia. I began teaching Spanish while pursuing my studies in Latin American Studies and History, and teaching quickly became an important part of my work. Since then, I’ve taught Spanish at the university level, both online and in person, and worked with students with different goals, backgrounds, and levels of experience.",
-    "My teaching is grounded in language education and a strong interest in the cultures and communities where Spanish is spoken. I have an M.A. in Latin American Studies from UC San Diego and have taught Spanish from introductory courses through advanced university-level language and culture. I have continued teaching Spanish to high school students, including AP Spanish, while also teaching English alongside my Spanish instruction. I hold a 120-hour TEFL certification and continue to develop my practice through language pedagogy and curriculum design.",
+    "I’m a Spanish teacher from Cali, Colombia. I began teaching Spanish while studying Latin American Studies and History, and have since taught students from a wide range of backgrounds, levels, and goals—from introductory Spanish to advanced university courses and AP Spanish.",
+    "I hold an M.A. in Latin American Studies from UC San Diego and a 120-hour TEFL certification. My teaching combines real-world communication with thoughtful attention to language, culture, and the goals of each student.",
   ],
   philosophy:
-    "In my classes, Spanish is something we use—not just something we study. We work with real-world topics, conversations, texts, media, and situations that give students a reason to communicate. Grammar and vocabulary are introduced and practiced as tools for expressing ideas, understanding others, and accomplishing meaningful tasks. Classes are active and collaborative, with opportunities to listen, speak, read, and write. Progress also requires work beyond the classroom, so students are expected to engage with Spanish regularly and take an active role in working toward the goals for their level.",
+    "I want students to feel comfortable using Spanish, making mistakes, and gradually taking on more of the language themselves. Classes are active and focused on meaningful communication, with the structure and support students need to keep making progress.",
   credentials: [
     "M.A. Latin American Studies — UC San Diego",
-    "120-Hour TEFL Certification",
+    "B.A. International Relations & Latin American Studies — University of Virginia",
+    "8+ years teaching Spanish",
   ],
 };
 
@@ -21,27 +22,34 @@ export default function TeacherIntro() {
   return (
     <section id="about" className="bg-paper-alt">
       <div className="container py-s7">
-        <div className="flex items-center gap-s2">
-          <span aria-hidden="true" className="h-2 w-2 rounded-full bg-accent" />
+        <div className="group flex w-fit items-center gap-s2">
+          <span
+            aria-hidden="true"
+            className="h-2 w-2 rounded-full bg-accent transition-transform duration-300 ease-out group-hover:translate-x-1"
+          />
           <p className="font-sans text-micro font-semibold uppercase tracking-wide text-ink-soft">
             01 / The teacher
           </p>
         </div>
 
-        <h2 className="mt-s2 font-serif text-h2 font-medium text-ink">
-          Meet your teacher
-        </h2>
+        <div className="group mt-s2 w-fit">
+          <h2 className="font-serif text-h2 font-medium text-ink">
+            Meet your teacher
+          </h2>
 
-        <p className="gloss mt-s1 text-h3">Conoce a tu profesor</p>
+          <p className="gloss mt-s1 translate-y-0 text-h3 opacity-75 transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:opacity-100">
+            Conoce a tu profesor
+          </p>
+        </div>
 
         <div className="mt-s5 grid grid-cols-[280px_1fr] gap-s5 nav:grid-cols-1">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-panel border border-rule shadow-sm">
+          <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-panel border border-rule shadow-sm">
             <Image
               src={teacher.photoSrc}
               alt={teacher.photoAlt}
               fill
               sizes="(max-width: 980px) 100vw, 280px"
-              className="object-cover"
+              className="object-cover transition-transform duration-400 ease-out group-hover:scale-[1.02]"
             />
           </div>
 
