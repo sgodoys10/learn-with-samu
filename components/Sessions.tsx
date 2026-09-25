@@ -12,6 +12,17 @@ const sessions: Session[] = [
     endDate: "Dec 10",
     meetingPattern: "Tuesdays + Thursdays · 6:00–7:00 PM",
     status: "open",
+    details: {
+      focus:
+        "Build a foundation in Spanish through everyday topics, meaningful interaction, and practical communication.",
+      goals:
+        "Work toward clear ACTFL-aligned goals for Novice Low proficiency, with an emphasis on understanding and producing simple language in familiar contexts.",
+      structure:
+        "Two one-hour classes each week for 10 weeks, with guided practice, interaction, and opportunities to use Spanish in meaningful situations.",
+      price: "$300 for the full course · $15 per class",
+      payment:
+        "Pay in full at the beginning or divide the course into 2 payments.",
+    },
   },
   {
     level: "Spanish 2 — Novice Mid",
@@ -20,6 +31,17 @@ const sessions: Session[] = [
     endDate: "Dec 17",
     meetingPattern: "Tuesdays + Thursdays · 7:00–8:00 PM",
     status: "limited",
+    details: {
+      focus:
+        "Develop greater confidence communicating in Spanish through conversation, real-world topics, and meaningful interaction.",
+      goals:
+        "Work toward clear ACTFL-aligned goals for Novice Mid proficiency, with increasing ability to communicate about familiar topics.",
+      structure:
+        "Two one-hour classes each week for 10 weeks, combining guided practice, conversation, and activities built around real-world situations.",
+      price: "$300 for the full course · $15 per class",
+      payment:
+        "Pay in full at the beginning or divide the course into 2 payments.",
+    },
   },
   {
     level: "Spanish 3 — Intermediate Low",
@@ -28,6 +50,17 @@ const sessions: Session[] = [
     endDate: "Dec 22",
     meetingPattern: "Tuesdays + Thursdays · 6:00–7:00 PM",
     status: "full",
+    details: {
+      focus:
+        "Develop intermediate communication through culture, authentic topics, and sustained interaction in Spanish.",
+      goals:
+        "Work toward clear ACTFL-aligned goals for Intermediate Low proficiency, including communicating with greater independence across familiar contexts.",
+      structure:
+        "Two one-hour classes each week for 10 weeks, using cultural topics, guided interaction, and activities that encourage increasingly independent language use.",
+      price: "$300 for the full course · $15 per class",
+      payment:
+        "Pay in full at the beginning or divide the course into 2 payments.",
+    },
   },
   {
     level: "Spanish 1 — Novice Low",
@@ -36,6 +69,17 @@ const sessions: Session[] = [
     endDate: "Mar 18",
     meetingPattern: "Tuesdays + Thursdays · 6:00–7:00 PM",
     status: "soon",
+    details: {
+      focus:
+        "Build a foundation in Spanish through everyday topics, meaningful interaction, and practical communication.",
+      goals:
+        "Work toward clear ACTFL-aligned goals for Novice Low proficiency, with an emphasis on understanding and producing simple language in familiar contexts.",
+      structure:
+        "Two one-hour classes each week for 10 weeks, with guided practice, interaction, and opportunities to use Spanish in meaningful situations.",
+      price: "$300 for the full course · $15 per class",
+      payment:
+        "Pay in full at the beginning or divide the course into 2 payments.",
+    },
   },
 ];
 

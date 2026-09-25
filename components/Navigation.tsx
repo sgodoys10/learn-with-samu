@@ -6,6 +6,7 @@ import Link from "next/link";
 const SITE_NAME = "Learn with Samu";
 
 const NAV_LINKS = [
+  { label: "Learn", href: "#learn" },
   { label: "Classes", href: "#classes" },
   { label: "About", href: "#about" },
   { label: "Sessions", href: "#sessions" },
